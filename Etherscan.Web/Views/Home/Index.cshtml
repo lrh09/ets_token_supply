@@ -1,0 +1,188 @@
+﻿@{
+    ViewBag.Title = "Token Supply Info";
+}
+
+
+
+<h1>Save / Update Token</h1>
+<p></p>
+
+<div>
+    <h2>Create New Token Supply Info</h2>
+    <div class="row">
+        <div class="col-md-6">
+            <form>
+                <div class="form-container">
+                    <input id="symbol_field" type="text" value="ETH" placeholder="Symbol"/>
+                </div>
+
+                <div class="form-container">
+                    <input id="name_field" type="text" value="ETHER" placeholder="Name"/>
+                </div>
+
+                <div class="form-container">
+                    <input id="contract_address_field" type="text" value="ADSD123123asd" placeholder="Contract Address"/>
+                </div>
+
+                <div class="form-container">
+                    <input id="total_supply_field" type="number" value="23123123" placeholder="Total Supply"/>
+                </div>
+
+                <div class="form-container">
+                    <input id="total_holder_field" type="number" value="123" placeholder="Total Holders"/>
+                </div>
+                
+                <div class="form-container">
+                    <div class="row">
+                        <div class="col-md-6"><button class="btn btn-primary" id="create">Create</button></div>
+                        <div class="col-md-6"><button class="btn bg-warning" id="reset">Reset</button></div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-6">
+            <div id="piechart"></div>
+        </div>
+    </div>
+    
+</div>
+
+<p></p>
+
+<div>
+    <h2>Token Supply Data <button class="btn btn-primary" id="download">Download</button> </h2>
+    <div> 
+        <table id="t" class="table-bordered">
+            <thead>
+            <th width="20px">Id</th>
+            <th width="80px">Symbol</th>
+            <th width="120px">Name</th>
+            <th width="400">Contract Address</th>
+            <th width="120">Total Supply</th>
+            <th width="80">Total Holders</th>
+            <th width="160">Actions</th>
+            </thead>
+            <tbody id="tbody"></tbody>
+        </table>
+    </div>
+    <ul id="pagination-label" class="pagination">
+    </ul>
+</div>
+
+@* <button class="open-button" onclick="openForm()">Open Form</button> *@
+
+<div class="form-popup" id="myForm">
+  <form class="form-container">
+    <h1>Login</h1>
+
+    <label for="symbol"><b>Symbol</b></label>
+    <input id="symbol_input" type="text" placeholder="Enter symbol">
+
+    <label for="nm"><b>Name</b></label>
+    <input id="name_input" type="text" placeholder="Enter Name">
+    
+    <label for="con_add"><b>Contract Address</b></label>
+    <input id="contract_address_input" type="text" placeholder="Enter Contract Address">
+
+    <label for="total_supply"><b>Total Supply</b></label>
+    <input id="total_supply_input" type="number" placeholder="Enter Total Supply">
+    
+    <label for="total_holders"><b>Total Holders</b></label>
+    <input id="total_holders_input" type="number" placeholder="Enter Total Holders">
+    
+    <button id="update" type="submit" class="btn">Update</button>
+    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+  </form>
+</div>
+
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript" src="../../Scripts/app.js"></script>
+<link type="text/css" rel="stylesheet" href="../../Content/custom.css"/>
+
+@section scripts
+{
+    <script>
+    let pageNumber = 1;
+    let totalPages = 1;
+    let currentUpdateId = 0;
+ 
+    window.onload = function (){
+        console.log("start")
+        loadTable(pageNumber);
+        // loadPagination()
+        plotStatistics()
+    }
+    
+    $('#reset').click(function(){
+        $('#symbol_field').val('');
+        $('#name_field').val('');
+        $('#contract_address_field').val('');
+        $('#total_supply_field').val('');
+        $('#total_holder_field').val('');
+     });
+    
+    $('#create').click(function(e){
+        e.preventDefault();
+            $.ajax({
+              type: "POST",
+              url: "http://localhost:5000/TokenSupply/Create",
+              headers: {
+                  'Accept': 'application/json',
+                  'Content-Type': 'application/json' 
+                  },
+              data: JSON.stringify({
+                  Symbol : $('#symbol_field').val(),
+                  Name : $('#name_field').val(),
+                  ContractAddress : $('#contract_address_field').val(),
+                  TotalSupply : parseInt($('#total_supply_field').val()),
+                  TotalHolders : parseInt($('#total_holder_field').val())
+              }),
+              dataType: "json",
+              success: function(result) {
+                alert('Created');
+                loadTable(pageNumber);
+                plotStatistics()
+              },
+              error: function(result) {
+                alert('error');
+              }
+            });
+        });
+    
+    $('#update').click(function(e){
+        e.preventDefault();
+            $.ajax({
+              type: "PUT",
+              url: "http://localhost:5000/TokenSupply/Edit?id="+currentUpdateId,
+              headers: {
+                  'Accept': 'application/json',
+                  'Content-Type': 'application/json' 
+                  },
+              data: JSON.stringify({
+                  Id: currentUpdateId,
+                  Symbol : $('#symbol_input').val(),
+                  Name : $('#name_input').val(),
+                  ContractAddress : $('#contract_address_input').val(),
+                  TotalSupply : parseInt($('#total_supply_input').val()),
+                  TotalHolders : parseInt($('#total_holders_input').val())
+              }),
+              dataType: "json",
+              success: function(result) {
+                alert('Updated');
+                loadTable(pageNumber);
+                closeForm();
+                plotStatistics()
+              },
+              error: function(result) {
+                alert('error');
+              }
+            });
+        });
+    
+    $('#download').click(function(e){
+        window.open('http://localhost:5000/TokenSupply/Download', '_blank', '');
+        });
+
+    </script>
+}

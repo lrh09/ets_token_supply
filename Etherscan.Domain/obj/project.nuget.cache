@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "zkRpZaikAaucv9AiwXYGqE2lq7H0BO+0kXJVRvriodTlRd3T5v5YTFV7ho2d0g6pe4UgVkOvzMnb6FXfzG0BkA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\WORKSTATION\\Destop\\Etherscan\\Etherscan.Domain\\Etherscan.Domain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\WORKSTATION\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

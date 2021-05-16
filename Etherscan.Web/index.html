@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+
+<script>
+    $(document).ready(function (){
+        $.get("test.txt", function(data, status){
+            $("#test").html(data);
+            alert(status);
+        })
+        }
+        
+    )
+</script>
+
+<button>Click me</button>
+<p id="test"></p>
+
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div>
+    <h1>Save / Update Token</h1>
+    <label>
+        <input type="text" placeholder="New"/>
+    </label>
+    <button>Create</button>
+</div>
+
+<div>
+    <table id="t">
+        <thead>
+            <th>Id</th>
+            <th>Symbol</th>
+            <th>Name</th>
+            <th>Contract Address</th>
+            <th>Total Supply</th>
+            <th>Total Holders</th>
+            <th></th>
+        </thead>
+        <tbody id="tbody"></tbody>
+    </table>
+
+    <table id="myTable">
+        <thead></thead>
+        <tbody></tbody>
+    </table>
+</div>
+
+<div id="demo">
+    <h1>The XMLHttpRequest Object</h1>
+    <button type="button" onclick="loadDoc()">Change Content</button>
+</div>
+
+</body>
+</html>
+
+
+<script>
+    $.ajax({
+        url: "http://localhost:5000/TokenSupply/GetAll",
+        type: 'GET',
+        success: function(res) {
+            console.log(res);
+            alert(res);
+        }
+    });
+    
+    $.ajax({
+        url: 'http://localhost:5000/TokenSupply/GetAll',
+        dataType: 'json',
+        success: function (result) {
+
+            console.log(result);
+            $('#myTable tr').empty();
+            var header = $('#myTable thead');
+            var body = $('#myTable tbody');
+            var hTr;
+            $('#myTable thead').append(hTr = $('<tr>'));
+            // Headers
+            for (var h = 0; h < result.headers.length; h++) {
+                hTr.append($('<th>', { text: result.headers[h] }))
+            }
+            // Body
+            for (var d in result.data) {
+                var data = result.data[d];
+                $('#myTable tbody').append($('<tr>')
+                    .append($('<td>', { text: data.Id}))
+                    .append($('<td>', { text: data.Symbol}))
+                    .append($('<td>', { text: data.Name }))
+                    .append($('<td>', { text: data.ContractAddress}))
+                    .append($('<td>', { text: data.TotalSupply}))
+                    .append($('<td>', { text: data.TotalHolders}))
+                )
+            }
+        }
+    })
+</script>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="RIDER_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$/../.." />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="jquery.canvasjs" level="application" />
+    <orderEntry type="library" name="jquery-1.11.1" level="application" />
+    <orderEntry type="library" name="infragistics.core" level="application" />
+    <orderEntry type="library" name="infragistics.dv" level="application" />
+    <orderEntry type="library" name="loader" level="application" />
+  </component>
+</module>

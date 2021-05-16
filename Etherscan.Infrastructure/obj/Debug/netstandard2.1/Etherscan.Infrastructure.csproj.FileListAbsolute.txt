@@ -1,0 +1,12 @@
+C:\Users\WORKSTATION\Destop\Etherscan\Etherscan.Infrastructure\bin\Debug\netstandard2.1\Etherscan.Infrastructure.deps.json
+C:\Users\WORKSTATION\Destop\Etherscan\Etherscan.Infrastructure\bin\Debug\netstandard2.1\Etherscan.Infrastructure.dll
+C:\Users\WORKSTATION\Destop\Etherscan\Etherscan.Infrastructure\bin\Debug\netstandard2.1\Etherscan.Infrastructure.pdb
+C:\Users\WORKSTATION\Destop\Etherscan\Etherscan.Infrastructure\bin\Debug\netstandard2.1\Etherscan.Domain.dll
+C:\Users\WORKSTATION\Destop\Etherscan\Etherscan.Infrastructure\bin\Debug\netstandard2.1\Etherscan.Domain.pdb
+C:\Users\WORKSTATION\Destop\Etherscan\Etherscan.Infrastructure\obj\Debug\netstandard2.1\Etherscan.Infrastructure.csprojAssemblyReference.cache
+C:\Users\WORKSTATION\Destop\Etherscan\Etherscan.Infrastructure\obj\Debug\netstandard2.1\Etherscan.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\WORKSTATION\Destop\Etherscan\Etherscan.Infrastructure\obj\Debug\netstandard2.1\Etherscan.Infrastructure.AssemblyInfo.cs
+C:\Users\WORKSTATION\Destop\Etherscan\Etherscan.Infrastructure\obj\Debug\netstandard2.1\Etherscan.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\WORKSTATION\Destop\Etherscan\Etherscan.Infrastructure\obj\Debug\netstandard2.1\Etherscan.Infrastructure.csproj.CopyComplete
+C:\Users\WORKSTATION\Destop\Etherscan\Etherscan.Infrastructure\obj\Debug\netstandard2.1\Etherscan.Infrastructure.dll
+C:\Users\WORKSTATION\Destop\Etherscan\Etherscan.Infrastructure\obj\Debug\netstandard2.1\Etherscan.Infrastructure.pdb

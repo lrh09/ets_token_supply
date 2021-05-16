@@ -1,0 +1,9 @@
+C:\Users\WORKSTATION\Destop\Etherscan\Etherscan.Domain\bin\Debug\netstandard2.1\Etherscan.Domain.deps.json
+C:\Users\WORKSTATION\Destop\Etherscan\Etherscan.Domain\bin\Debug\netstandard2.1\Etherscan.Domain.dll
+C:\Users\WORKSTATION\Destop\Etherscan\Etherscan.Domain\bin\Debug\netstandard2.1\Etherscan.Domain.pdb
+C:\Users\WORKSTATION\Destop\Etherscan\Etherscan.Domain\obj\Debug\netstandard2.1\Etherscan.Domain.csprojAssemblyReference.cache
+C:\Users\WORKSTATION\Destop\Etherscan\Etherscan.Domain\obj\Debug\netstandard2.1\Etherscan.Domain.AssemblyInfoInputs.cache
+C:\Users\WORKSTATION\Destop\Etherscan\Etherscan.Domain\obj\Debug\netstandard2.1\Etherscan.Domain.AssemblyInfo.cs
+C:\Users\WORKSTATION\Destop\Etherscan\Etherscan.Domain\obj\Debug\netstandard2.1\Etherscan.Domain.csproj.CoreCompileInputs.cache
+C:\Users\WORKSTATION\Destop\Etherscan\Etherscan.Domain\obj\Debug\netstandard2.1\Etherscan.Domain.dll
+C:\Users\WORKSTATION\Destop\Etherscan\Etherscan.Domain\obj\Debug\netstandard2.1\Etherscan.Domain.pdb
